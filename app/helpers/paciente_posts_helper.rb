@@ -1,0 +1,2 @@
+module PacientePostsHelper
+end

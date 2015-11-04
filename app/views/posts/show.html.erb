@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<%= audio_tag('/uploads/'+File.basename(@post.audio_url), autoplay: true, controls: true)%>
+</p>
+
+
+
+<div class="row"> 
+	<div class="input-field col s3">
+
+		<div class="card medium">
+		    <div class="card-image waves-effect waves-block waves-light">
+		     <%= image_tag('/uploads/'+File.basename(@post.image_url(:pequeno)))%>
+		    </div>
+
+		    <div class="card-content">
+		      <span class="card-title activator grey-text text-darken-4"><%= @post.titulo %></span>
+		    </div>
+		</div>
+   </div>
+
+
+</div>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

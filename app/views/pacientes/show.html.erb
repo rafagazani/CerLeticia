@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+
+    <div class="row valign-wrapper right-align">
+      <div class="col s10">
+        <span class="black-text">
+          <strong><%= @paciente.nome %></strong>
+        </span>
+      </div>
+      <div class="col s1">
+        <%= image_tag('/uploads/'+File.basename(@paciente.image_url(:pequeno)), :class => 'circle responsive-img')%> 
+      </div>
+    </div>
+
+<div class="row center-align"> 
+       
+<!--Imagem principal-->
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+
+          <div class="card medium alt-max">
+              <div class="card-image blue-grey darken-3 waves-effect waves-block waves-light">
+                    <%= audio_tag('/uploads/'+File.basename(@post.audio_url), autoplay: true, controls: false)%>
+                    <%= image_tag('/uploads/'+File.basename(@post.image_url(:grande)))%>
+              </div>
+
+              <div class="card-action">
+                <span class="card-title activator grey-text text-darken-4"><strong><%= @post.titulo %></strong></span>
+              </div>
+          </div>
+       
+        </div>
+</div>  
+
+<!--carregando-->
+<div class="row center-align"> 
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div id="timer" class="progress spinner-red">
+          <div id="progresso" class="determinate"></div>
+    </div>
+  </div>
+</div>
+
+<!--Lista de imagens aleatorias-->
+<div class="row center-align">     
+      
+        <% @imagens.each do |imagem| %>
+
+       
+
+
+        <div class="col s12 m6 l3 center-col">
+
+        
+              <a href="/pacientes/<%= "#{@paciente._id}/obj/#{imagem._id}" %>" class="waves-effect waves-light">
+
+                <div class="img-quadrada waves-effect waves-block waves-light" style="background-image:url('/uploads/<%= File.basename(imagem.image_url(:pequeno)) %>');">
+                </div>
+            
+              </a>
+
+       
+        </div>
+        
+       <% end %> 
+</div>  
+
+<script>
+  //AUMENTA A BARRA DE PROGRESSO E REDIRECIONA PARA UM OBJETO ALEATORIO APOS 10 SEGUNDOS SE NAO CLICAR EM NADA
+  var i = 0;
+  clearInterval(intervalo);
+  var intervalo = setInterval(function(){ 
+    
+    $('#progresso').css('width',i*6.66+'%'); 
+
+    if(i === 15){
+      clearInterval(intervalo);
+      window.location.href = '/pacientes/<%= @paciente._id %>/';
+    }
+    i++;
+  }, 1000);
+
+</script>

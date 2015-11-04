@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyText
+  frase: MyString
+  data_publicacao: 2015-08-27
+  data_dilma: 2015-08-27
+
+two:
+  titulo: MyText
+  frase: MyString
+  data_publicacao: 2015-08-27
+  data_dilma: 2015-08-27

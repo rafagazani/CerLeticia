@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Paciente Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id paciente</th>
+      <th>Id post</th>
+      <th>Visualizacoes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paciente_posts.each do |paciente_post| %>
+      <tr>
+        <td><%= paciente_post.id_paciente %></td>
+        <td><%= paciente_post.id_post %></td>
+        <td><%= paciente_post.visualizacoes %></td>
+        <td><%= link_to 'Show', paciente_post %></td>
+        <td><%= link_to 'Edit', edit_paciente_post_path(paciente_post) %></td>
+        <td><%= link_to 'Destroy', paciente_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paciente post', new_paciente_post_path %>
