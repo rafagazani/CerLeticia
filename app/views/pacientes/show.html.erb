@@ -1,16 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 
-    <div class="row valign-wrapper right-align">
-      <div class="col s10">
-        <span class="black-text">
-          <strong><%= @paciente.nome %></strong>
-        </span>
-      </div>
-      <div class="col s1">
-        <%= image_tag('/uploads/'+File.basename(@paciente.image_url(:pequeno)), :class => 'circle responsive-img')%> 
-      </div>
-    </div>
+<!--Botão para editar-->  
+<%= link_to pacientes_path, :class => 'btn-floating high btn-large deep-orange lighten-1 waves-effect waves-light btn white-text' do %>
+    <i class="fa fa-remove left"></i>Novo
+<% end %>
+<!--Fim do botão editar-->
 
 <div class="row center-align"> 
        
@@ -77,6 +72,6 @@
       window.location.href = '/pacientes/<%= @paciente._id %>/';
     }
     i++;
-  }, 1000);
+  }, 6000);
 
 </script>

@@ -5,6 +5,22 @@
 	  <% if current_user.present? %>
       <%= current_user.email %>
       <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>
+<nav>
+  <div>
+    <div class="card-content">
+     <%= link_to posts_path, :class => 'waves-effect waves-light btn-large white-text large' do %>
+              <i class="fa fa-area-chart fa-5x"></i>
+          <% end %>
+
+           <%= link_to pacientes_path, :class => 'waves-effect waves-light btn-large white-text large ' do %>
+              <i class="mdi-social-group large left"></i>
+          <% end %>
+        </div>
+    </div>
+
+        </nav>
+
+
       <% else %>
         <%= link_to "Cadastrar", new_user_registration_path %>/
         <%= link_to "Entrar", new_user_session_path %>

@@ -4,7 +4,13 @@ pt:
     new:
       title: Cadastro
     edit:
-      title: Editar Objeto
+      title: Editar Objetosssss
+
+  pacientes:
+    new:
+      title: Cadastro
+    edit:
+      title: Editar Paciente
 
   users:
     new:

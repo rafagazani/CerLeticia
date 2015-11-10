@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Pacientes</h1>
 
@@ -31,12 +31,16 @@
                   <span class="card-title activator grey-text text-darken-5"><%= paciente.nome %></span><br>
                   
                   
-
+<% unless current_user.present? %> 
                    <!--Botão para mostrar-->  
           <%= link_to paciente, :class => 'waves-effect waves-light btn white-text small' do %>
               <i class="fa fa-search"></i>
           <% end %>
           <!--Fim do botão mostrar-->
+          <% else %>
+
+ <% end %>
+
     <% if current_user.present? %>          
           &nbsp;
           <!--Botão para editar-->  
@@ -52,7 +56,7 @@
               <i class="fa fa-remove"></i>
           <% end %>
           <!--Fim do botão excluir-->
-  <% end %>
+    <% end %>
 
 
 

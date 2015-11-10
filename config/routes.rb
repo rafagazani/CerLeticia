@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/index'
+
   resources :paciente_posts
   resources :pacientes
   devise_for :users
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
     authenticated :user do
-    root 'posts#index', as: :authenticated_root
+    root 'admin#index', as: :authenticated_root
   end
 
   #para colocar paciente na url de lsitagem de objetos
